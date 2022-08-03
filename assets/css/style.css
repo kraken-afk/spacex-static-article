@@ -349,8 +349,8 @@
 }
 
 @media screen and (max-width: 708px) {
-  body {
-    overflow-x: hidden;
+  body, html {
+    overflow-x: hidden !important;
   }
 
   .profile-description {
