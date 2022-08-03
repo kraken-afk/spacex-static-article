@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
 
-  background-color: #1d1d1d;
+  background-color: var(--color-primary);
   border-bottom: var(--border-primary);
   position: sticky;
   top: 0;
@@ -63,6 +63,7 @@
   text-decoration: none;
   padding: 5px 8px;
   position: relative;
+  color: white;
 }
 
 .nav-anchor:not(.nav-anchor:last-child) {
@@ -210,6 +211,7 @@
   margin-bottom: .3rem;
   opacity: .7;
   transition: .2s;
+  color: white;
 }
 
 .nav-mail:hover {
@@ -280,13 +282,18 @@
 }
 
 .source a {
-  font-size: .7rem;
+  font-size: .8rem;
+  color: white;
 }
 
 .footer p {
   margin-top: 2rem;
   font-size: .7rem;
   text-align: center;
+}
+
+.footer a {
+  color: white;
 }
 
 .sandwich-btn {
@@ -347,14 +354,15 @@
   }
 
   .profile-description {
-    margin: 0 auto;
-    margin-bottom: .5rem;
+    margin: 1.2rem auto;
   }
 
 }
 
 @media screen and (max-width: 708px) {
-  body, html {
+
+  body,
+  html {
     overflow-x: hidden !important;
   }
 
@@ -398,11 +406,11 @@
   }
 
   .sandwich-btn.close>*:first-child {
-    transform: rotate(405deg) translateY(5px);
+    transform: rotate(405deg) translate(1px, 6.5px);
   }
 
   .sandwich-btn.close>*:last-child {
-    transform: rotate(-405deg) translateY(-6px);
+    transform: rotate(-405deg) translate(-1px, -6px);
   }
 
   .sandwich-btn.close~.navigation {
@@ -411,13 +419,25 @@
 }
 
 @media screen and (max-width: 576px) {
+  .content-article p {
+    font-size: 1rem;
+  }
+
+  .profile-description {
+    font-size: .9rem;
+  }
+
+  .source ul li:first-child {
+    font-size: 1rem;
+  }
+
   .header-title {
     width: 80%;
     max-width: 300px;
   }
 
   .header-quote {
-    font-size: min(100%, 1.3rem);
+    font-size: 1.2rem;
   }
 
   .content-figure {

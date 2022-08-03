@@ -17,7 +17,7 @@
 :root {
   font-size: 16px;
   --border-primary: 1px solid rgba(105, 105, 105, 0.6);
-  --color-primary: #1d1d1d;
+  --color-primary: #141414;
   --color-secondary: rgba(105, 105, 105, 0.6);
 }
 
@@ -30,14 +30,16 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #1d1d1d;
+  background-color: var(--color-primary);
   color: #fff;
 }
 
 a,
-a:-webkit-any-Link {
-  color: #fff
+a:-webkit-any-Link,
+a:-moz-any-link {
+  color: #fff;
 }
+
 
 .fill-white {
   fill: #fff;
