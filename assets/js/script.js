@@ -2,6 +2,7 @@ const menuBtn = document.getElementById("menu-btn");
 const navBtns = document.querySelectorAll(".nav-anchor");
 const homeBtn = document.querySelector(".nav-home");
 const navBar = document.querySelector(".nav");
+const navGap = document.querySelector(".nav-gap");
 
 /* toggle for the navigation bar in mobile width */
 menuBtn.addEventListener("click", () => {
@@ -36,7 +37,14 @@ window.onscroll = () => {
   const headerPos = document.querySelector(".header").getBoundingClientRect().bottom;
   const topElement = navBar.getBoundingClientRect().top;
 
-  if (headerPos > 0) navBar.classList.remove("fixedToTop");
-  if (topElement < 0) navBar.classList.add("fixedToTop");
+  if (headerPos > 0) {
+    navGap.style.height = 0;
+    navBar.classList.remove("fixedToTop");
+  }
+
+  if (topElement < 0) {
+    navGap.style.height = `${navBar.clientHeight}px`;
+    navBar.classList.add("fixedToTop");
+  }
 
 }
