@@ -1,6 +1,7 @@
 const menuBtn = document.getElementById("menu-btn");
 const navBtns = document.querySelectorAll(".nav-anchor");
 const homeBtn = document.querySelector(".nav-home");
+const navBar = document.querySelector(".nav");
 
 /* toggle for the navigation bar in mobile width */
 menuBtn.addEventListener("click", () => {
@@ -22,5 +23,20 @@ navBtns.forEach((navBtn) => {
   })
 })
 
-/* scroling to top when spacex logo is clicked */
-homeBtn.addEventListener("click", () => window.scrollTo({top: 0}));
+/* scroling to top when spacex logo got clicked */
+homeBtn.addEventListener("click", () => window.scrollTo({ top: 0 }));
+
+/**
+ * Because position sticky is unable to working if
+ * the parent element has overflow hidden. so im using simple
+ * script to mimic the behavior
+ * NOTE: its maybe causing perfomance issue
+ */
+window.onscroll = () => {
+  const headerPos = document.querySelector(".header").getBoundingClientRect().bottom;
+  const topElement = navBar.getBoundingClientRect().top;
+
+  if (headerPos > 0) navBar.classList.remove("fixedToTop");
+  if (topElement < 0) navBar.classList.add("fixedToTop");
+
+}

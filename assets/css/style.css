@@ -320,6 +320,11 @@
   width: 80%;
 }
 
+.fixedToTop {
+  position: fixed;
+  top: 0;
+}
+
 /* Responsive Breakpoints */
 
 @media screen and (max-width: 992px) {
@@ -349,8 +354,8 @@
 }
 
 @media screen and (max-width: 708px) {
-  body, html {
-    overflow-x: hidden !important;
+  body {
+    overflow-x: hidden;
   }
 
   .profile-description {
